@@ -1,10 +1,9 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://medinv.onrender.com/api',
 });
 
-// Interceptor para inyectar token JWT automáticamente
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('medinv_token');
   if (token) {
